@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -19,7 +20,8 @@ public class Artigo {
 	@Column(nullable = false, length = 200)
 	private String titulo;
 	
-	@Column(nullable = false, length = 10000)
+	@Column(nullable = false)
+	@Lob
 	private String corpo;
 	
 	@Column(nullable = false)
@@ -47,4 +49,17 @@ public class Artigo {
     public Long getId() {
         return id;
     }
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public String getCorpo() {
+		return corpo;
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+ 
 }

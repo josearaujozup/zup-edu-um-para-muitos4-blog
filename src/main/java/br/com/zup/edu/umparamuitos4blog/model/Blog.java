@@ -24,12 +24,11 @@ public class Blog {
 	
 	public LocalDateTime criadoEm=LocalDateTime.now();
 	
-	@OneToMany(cascade = CascadeType.PERSIST, mappedBy = "blog")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "blog")
 	private List<Artigo> artigos = new ArrayList<>();
 
-	public Blog(String nome, LocalDateTime criadoEm) {
+	public Blog(String nome) {
 		this.nome = nome;
-		this.criadoEm = criadoEm;
 	}
 	
 	/**
